@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Abc"/>
+        <meta property="og:title" content="book"/>
     
 
     <!--Open Graph Description-->
@@ -33,7 +33,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="article" />
+        <meta property="og:type" content="website" />
     
 
     <!--Page Cover-->
@@ -44,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>Abc - book</title>
+    <title>page - book</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -63,7 +63,7 @@
     <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../../../../css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
 
     <!-- Google Analytics -->
     
@@ -84,37 +84,37 @@
         <ul>
             
             <li class="menu-item">
-                <a href="../../../../index.html">
+                <a href="../../index.html">
                     Home
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="../../../../archives">
+                <a href="../../archives">
                     Archives
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="../../../../about.html">
+                <a href="../../about.html">
                     About
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="../../../../tags">
+                <a href="../../tags">
                     Tags
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="../../../../categories">
+                <a href="../../categories">
                     Categories
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="../../../../contact.html">
+                <a href="../../contact.html">
                     Contact
                 </a>
             </li>
@@ -139,49 +139,71 @@
     <div class="logo">
         <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
+            <h1 id="main-title" class="title">book</h1>
+        
     </div>
 </header>
 
         <section class="main">
             
+                
 <div class="post">
 
-    <div class="post-header">
+    <div class="post-header index">
         <h1 class="title">
-            <a href="">
-                Abc
+            <a href="../../2019/12/04/golang/base/how_to_write_go_code/">
+                How to Write Go Code
             </a>
         </h1>
         <div class="post-info">
             
-                <span class="date">2019-12-05</span>
+                <span class="date">2019-12-04</span>
             
             
+            
+                <span class="category">
+                    <a href="/categories/code/">code</a>
+                </span>
             
         </div>
     </div>
 
-    <div class="content">
-
-        <!-- Gallery -->
-        
-
-        <!-- Post Content -->
-        
-    </div>
-
     
+        <div class="content">
+            <h1 id="How-to-write-go-code"><a href="#How-to-write-go-code" class="headerlink" title="How to write go code"></a>How to write go code</h1><h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><ul>
+<li>GOROOT 指定go语言安装的位置</li>
+<li>GOPATH 指定go代码所在位置</li>
+<li>GOBIN 指定go install的程序所在的位置</li>
+</ul>
+<p>我们在程序中import包时的路径就是 $GOROOT/xxx 或 $GOPATH/xxx的包<br>还有一个特殊的约定，当你import包假设为 github.com/a/b 那么优先<br>使用的是 vendor/目录下的东西，然后搜索不到则到GOPATH下搜索，最后<br>再到GOROOT下搜索。</p>
+<h2 id="编写代码"><a href="#编写代码" class="headerlink" title="编写代码"></a>编写代码</h2><p>在$GOPATH/src目录下创建一个你自己的包，然后写你的代码即可。</p>
+<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p>使用 go build xxx(你包名文件夹名) 然后就会在当前目录得到编译后的<br>文件。也可以使用 go install xxx ，这样编译结果就会在GOBIN指定的<br>那个位置。</p>
 
-    
-
-    <!-- Comments -->
+        </div>
     
 
 </div>
+            
         </section>
-
     </div>
 </div>
+
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="wrap-pagination">
+                <a class="" href="/page/7/">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </a>
+                <a class="disabled" href="/">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
 
 
 </div>
@@ -204,19 +226,19 @@
         <ul>
             
             <li>
-                <a class="footer-post" href="../../14/golang/base/error/">Error 错误</a>
+                <a class="footer-post" href="../../2019/12/14/golang/base/error/">Error 错误</a>
             </li>
             
             <li>
-                <a class="footer-post" href="../../13/golang/base/goroutine/">Goroutine  协程</a>
+                <a class="footer-post" href="../../2019/12/13/golang/base/goroutine/">Goroutine  协程</a>
             </li>
             
             <li>
-                <a class="footer-post" href="../../12/golang/base/interface/">Interface 接口</a>
+                <a class="footer-post" href="../../2019/12/12/golang/base/interface/">Interface 接口</a>
             </li>
             
             <li>
-                <a class="footer-post" href="../../11/golang/base/struct/">Struct 结构体</a>
+                <a class="footer-post" href="../../2019/12/11/golang/base/struct/">Struct 结构体</a>
             </li>
             
         </ul>
@@ -230,7 +252,11 @@
     <ul>
         
         <li>
-            <a class="footer-post" href="../../../../categories/code/">code</a>
+            <a class="footer-post" href="../../categories/life/">life</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="../../categories/code/">code</a>
         </li>
         
     </ul>
@@ -299,7 +325,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 
 <!-- Custom JavaScript -->
-<script src="../../../../js/main.js"></script>
+<script src="../../js/main.js"></script>
 
 <!-- Disqus Comments -->
 
