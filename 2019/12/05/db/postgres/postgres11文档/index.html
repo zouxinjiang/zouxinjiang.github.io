@@ -1,172 +1,182 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html lang="zh-CN">
 
-<!-- Head tag -->
 <head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="book">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://zouxinjiang.github.io">
+    <!--SEO-->
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="cinyoung" />
 
-    <!--Description-->
+
+<meta name="description" content="postgres v11 官方文档阅读笔记特点
+表继承
+表分割
+
+概览安装参考 安装postgres.md
+pg架构pg采用cs模式架构。服务端程序叫做postgres，其中客服端连接后服务端会..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
     
-        <meta name="description" content="my work and life blog">
+    Postgres11文档 |
     
+    book
+</title>
 
-    <!--Author-->
-    
-        <meta name="author" content="cinyoung">
-    
+<link rel="alternate" href="/atom.xml" title="book" type="application/atom+xml">
 
-    <!--Open Graph Title-->
-    
-        <meta property="og:title" content="Postgres11文档"/>
-    
 
-    <!--Open Graph Description-->
-    
-        <meta property="og:description" content="my work and life blog" />
-    
+<link rel="icon" href="/favicon.ico">
 
-    <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="book"/>
-
-    <!--Type page-->
-    
-        <meta property="og:type" content="article" />
-    
-
-    <!--Page Cover-->
-    
-
-    <meta name="twitter:card" content="summary" />
-    
-
-    <!-- Title -->
-    
-    <title>Postgres11文档 - book</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
-
-    <!-- Custom Fonts -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Gallery -->
-    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="../../../../../../css/style.css">
-
-    <!-- Google Analytics -->
     
 
-
-</head>
-
-
-<body>
-
-<div class="bg-gradient"></div>
-<div class="bg-pattern"></div>
-
-<!-- Menu -->
-<!--Menu Links and Overlay-->
-<div class="menu-bg">
-    <div class="menu-container">
-        <ul>
-            
-            <li class="menu-item">
-                <a href="../../../../../../index.html">
-                    Home
-                </a>
-            </li>
-            
-            <li class="menu-item">
-                <a href="../../../../../../archives">
-                    Archives
-                </a>
-            </li>
-            
-            <li class="menu-item">
-                <a href="../../../../../../about.html">
-                    About
-                </a>
-            </li>
-            
-            <li class="menu-item">
-                <a href="../../../../../../tags">
-                    Tags
-                </a>
-            </li>
-            
-            <li class="menu-item">
-                <a href="../../../../../../categories">
-                    Categories
-                </a>
-            </li>
-            
-            <li class="menu-item">
-                <a href="../../../../../../contact.html">
-                    Contact
-                </a>
-            </li>
-            
-        </ul>
-    </div>
+<link rel="stylesheet" href="../../../../../../css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="../../../../../../css/font-awesome.min.css?rev=4.7.0">
+<link rel="stylesheet" href="../../../../../../css/style.css?rev=@@hash">
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
 </div>
 
-<!--Hamburger Icon-->
-<nav>
-    <a href="#menu"></a>
-</nav>
 
-<div class="container">
 
-    <!-- Main Content -->
-    <div class="row">
-    <div class="col-sm-12">
 
-        <!--Title and Logo-->
-        <header>
-    <div class="logo">
-        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
-        
-    </div>
-</header>
+    
 
-        <section class="main">
+</head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='cinyoung'>
+            <!-- <img src="../../../../../../img/avatar.jpg" alt="logo头像" class="img-responsive center-block"> -->
+            <img src="https://avatars1.githubusercontent.com/u/12110265?s=460&amp;v=4" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
             
-<div class="post">
-
-    <div class="post-header">
-        <h1 class="title">
-            <a href="">
-                Postgres11文档
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-12-05</span>
-            
-            
+            <img src="../../../../../../img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
             
         </div>
     </div>
-
-    <div class="content">
-
-        <!-- Gallery -->
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://zouxinjiang.github.io">
+                        book</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                首页</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/code"><i class="fa "></i>
+                                代码</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/life/"><i class="fa "></i>
+                                生活</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Postgres11文档">
+            
+            Postgres11文档
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
         
-
-        <!-- Post Content -->
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2019/12/05</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
         <h1 id="postgres-v11-官方文档阅读笔记"><a href="#postgres-v11-官方文档阅读笔记" class="headerlink" title="postgres v11 官方文档阅读笔记"></a>postgres v11 官方文档阅读笔记</h1><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ol>
 <li>表继承</li>
 <li>表分割</li>
@@ -1288,150 +1298,126 @@
 </ul>
 
     </div>
-
     
-
-    
-
-    <!-- Comments -->
-    
-
-</div>
-        </section>
-
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
     </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="../../../../06/code/golang/base/type/" class="pre-post btn btn-default" title='Type 类型'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            Type 类型</span>
+    </a>
+    
+    
+    <a href="../../../life/audit/%E5%9C%A8%E7%88%B1%E6%83%85%E9%87%8C%E5%8F%96%E6%9A%96/" class="next-post btn btn-default" title='在爱情里取暖'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            在爱情里取暖</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
 </div>
 
+<div id="comments">
+    
+
+<div id="vcomments" class="valine"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="../../../../../../assets/valine.min.js"></script>
+<script>
+new Valine({
+    av: AV,
+    el: '#vcomments',
+    appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+    appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+    placeholder: '说点什么吧',
+    notify: false,
+    verify: true,
+    avatar: 'mm',
+    meta: 'nick,mail'.split(','),
+    pageSize: '10',
+    path: window.location.pathname,
+    lang: 'zh-CN'.toLowerCase()
+})
+</script>
+
 
 </div>
 
-<!-- Footer -->
-<div class="push"></div>
-
-<footer class="footer-content">
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#postgres-v11-官方文档阅读笔记"><span class="toc-text">postgres v11 官方文档阅读笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#特点"><span class="toc-text">特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#概览"><span class="toc-text">概览</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pg架构"><span class="toc-text">pg架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#访问数据库"><span class="toc-text">访问数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建表"><span class="toc-text">创建表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插入一条数据"><span class="toc-text">插入一条数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查询"><span class="toc-text">查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#连接查询"><span class="toc-text">连接查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#聚合函数"><span class="toc-text">聚合函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更新"><span class="toc-text">更新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除"><span class="toc-text">删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#高级特性"><span class="toc-text">高级特性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#视图"><span class="toc-text">视图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#外键"><span class="toc-text">外键</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#事务"><span class="toc-text">事务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#窗口函数"><span class="toc-text">窗口函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#继承"><span class="toc-text">继承</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL"><span class="toc-text">SQL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#语法"><span class="toc-text">语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#常量"><span class="toc-text">常量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注释"><span class="toc-text">注释</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#类型转换"><span class="toc-text">类型转换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#值表达式"><span class="toc-text">值表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#function的调用"><span class="toc-text">function的调用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据定义"><span class="toc-text">数据定义</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#表"><span class="toc-text">表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#默认值"><span class="toc-text">默认值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#约束"><span class="toc-text">约束</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#系统列"><span class="toc-text">系统列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修改表结构"><span class="toc-text">修改表结构</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#增加列"><span class="toc-text">增加列</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#移除某列"><span class="toc-text">移除某列</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#添加约束"><span class="toc-text">添加约束</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#删除约束"><span class="toc-text">删除约束</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#修改列默认值"><span class="toc-text">修改列默认值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#修改列类型定义"><span class="toc-text">修改列类型定义</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#修改列名"><span class="toc-text">修改列名</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#修改表名"><span class="toc-text">修改表名</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#权限"><span class="toc-text">权限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#schema"><span class="toc-text">schema</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#删除空schema"><span class="toc-text">删除空schema</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#强制删除schema"><span class="toc-text">强制删除schema</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#搜索路径"><span class="toc-text">搜索路径</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#继承-1"><span class="toc-text">继承</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#表的分割"><span class="toc-text">表的分割</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#依赖跟踪"><span class="toc-text">依赖跟踪</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据操纵"><span class="toc-text">数据操纵</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#插入数据"><span class="toc-text">插入数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#更新数据"><span class="toc-text">更新数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#删除数据"><span class="toc-text">删除数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#操纵数据的同时返回数据表-RETURNING"><span class="toc-text">操纵数据的同时返回数据表(RETURNING)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查询-1"><span class="toc-text">查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#表表达式"><span class="toc-text">表表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#where条件句"><span class="toc-text">where条件句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#group-by-和-having"><span class="toc-text">group by 和 having</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Grouping-Sets-CUBE-ROLLUP"><span class="toc-text">Grouping Sets,CUBE,ROLLUP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#select-列表"><span class="toc-text">select 列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#排序"><span class="toc-text">排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#limit和offset"><span class="toc-text">limit和offset</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#值列表"><span class="toc-text">值列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#WITH-AS-子查询"><span class="toc-text">WITH AS 子查询</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据类型"><span class="toc-text">数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#类型"><span class="toc-text">类型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#function和操作符"><span class="toc-text">function和操作符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#操作符"><span class="toc-text">操作符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#function"><span class="toc-text">function</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串函数"><span class="toc-text">字符串函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#格式化函数"><span class="toc-text">格式化函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#时间函数"><span class="toc-text">时间函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#枚举函数"><span class="toc-text">枚举函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#网络类型函数"><span class="toc-text">网络类型函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文本搜索类型"><span class="toc-text">文本搜索类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JSON"><span class="toc-text">JSON</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#条件表达式"><span class="toc-text">条件表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#聚合函数-1"><span class="toc-text">聚合函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#窗口函数-1"><span class="toc-text">窗口函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#子查询"><span class="toc-text">子查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#触发器"><span class="toc-text">触发器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类型转换-1"><span class="toc-text">类型转换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务端编程"><span class="toc-text">服务端编程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL-1"><span class="toc-text">SQL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义聚合函数"><span class="toc-text">自定义聚合函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作符重载"><span class="toc-text">操作符重载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#触发器-1"><span class="toc-text">触发器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#存储过程"><span class="toc-text">存储过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#PL-pgSQL"><span class="toc-text">PL/pgSQL</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#变量声明块"><span class="toc-text">变量声明块</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#表达式"><span class="toc-text">表达式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#流程控制"><span class="toc-text">流程控制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#游标"><span class="toc-text">游标</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
-                <h2>About</h2>
-                <p>
-                    The source code is available on Github.
-                </p>
-            </div>
-            
-    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
-        <h2>Recent Posts</h2>
-        <ul>
-            
-            <li>
-                <a class="footer-post" href="../../../../14/code/golang/base/error/">Error 错误</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="../../../../13/code/golang/base/goroutine/">Goroutine  协程</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="../../../../12/code/golang/base/interface/">Interface 接口</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="../../../../11/code/golang/base/struct/">Struct 结构体</a>
-            </li>
-            
-        </ul>
-    </div>
-
-
-
-            
-<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
-    <h2>Categories</h2>
-    <ul>
-        
-        <li>
-            <a class="footer-post" href="../../../../../../categories/os/">os</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="../../../../../../categories/life/">life</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="../../../../../../categories/code/">code</a>
-        </li>
-        
-    </ul>
-</div>
-
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <ul class="list-inline footer-social-icons">
-                    
-                    <li class="list-inline-item">
-                        <a href="https://zouxinjiang.github.io">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-github"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="mailto:1205591952@qq.com" target="_blank" rel="noopener">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-envelope-o"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="\#">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-rss"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="footer-copyright">
-                    @Untitled. All right reserved | Design & Cinyoung
-                </div>
-            </div>
         </div>
     </div>
 </footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+    访问量:
+    <strong id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    &nbsp; | &nbsp;
+    访客数:
+    <strong id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
 
-<!-- After footer scripts -->
-
-<!-- jQuery -->
-<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-
-<!-- Tween Max -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
-
-<!-- Gallery -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
-
-<!-- Custom JavaScript -->
-<script src="../../../../../../js/main.js"></script>
-
-<!-- Disqus Comments -->
 
 
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
+<script src="../../../../../../js/app.js?rev=@@hash"></script>
 </body>
-
 </html>
